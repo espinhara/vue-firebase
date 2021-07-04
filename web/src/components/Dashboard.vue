@@ -20,6 +20,13 @@ export default {
     ...mapGetters({
       user: "user"
     })
-  }
+  },
+  mounted() {
+    if( !this.user.loggedIn){
+      this.$router.replace({
+          name: "login"
+      });
+    }
+  },
 };
 </script>
